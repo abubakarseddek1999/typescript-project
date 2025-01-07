@@ -3,19 +3,29 @@
 import Table from "@/components/Table/DonorsTable";
 import React, { useState, useEffect } from "react";
 
-type Donor = {
+// types/UserDonor.ts
+export type UserDonor = {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    phone: string;
+    gender: string;
+};
+
+// types/ApiDonor.ts
+export type ApiDonor = {
     id: number;
     name: string;
     username: string;
     email: string;
     phone: string;
     gender?: string;
-    [key: string]: any;
 };
 
 const Page: React.FC = () => {
-    const [donors, setDonors] = useState<Donor[]>([]);
-    const [filteredDonors, setFilteredDonors] = useState<Donor[]>([]);
+    const [donors, setDonors] = useState<UserDonor[]>([]);
+    const [filteredDonors, setFilteredDonors] = useState<UserDonor[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [search, setSearch] = useState<string>("");
     const [selectedGender, setSelectedGender] = useState<string>("");
@@ -23,7 +33,7 @@ const Page: React.FC = () => {
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users")
             .then((response) => response.json())
-            .then((data: Donor[]) => {
+            .then((data: ApiDonor[]) => {
                 const dataWithGender = data.map((donor) => ({
                     ...donor,
                     gender: Math.random() > 0.5 ? "male" : "female",
@@ -88,5 +98,4 @@ const Page: React.FC = () => {
         </div>
     );
 };
-
 export default Page;
