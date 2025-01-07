@@ -2,6 +2,7 @@ import React from 'react';
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import Image from 'next/image';
 import PrimaryButton from '@/components/Button/PrimaryButton';
+import Link from 'next/link'
 
 const page: React.FC = () => {
     return (
@@ -31,7 +32,9 @@ const page: React.FC = () => {
                         <p className="mt-4">
                             Mauris mollis lobortis turpis, eget accumsan ante aliquam quis. Nam ullamcorper rhoncus sem vitae tempus mattis porta enim. Duis fermentum faucibus est, sed vehicula velit sodales vitae.
                         </p>
-                        <PrimaryButton label="Learn more"></PrimaryButton>
+                        <Link href="/about/Info">
+                            <PrimaryButton label="Learn more"></PrimaryButton>
+                        </Link>
                     </div>
 
                 </div>
@@ -46,7 +49,7 @@ const page: React.FC = () => {
                         <div>
                             <div className='flex justify-between'>
                                 <div>
-                                    <p className='text-xl font-bold cursor-pointer my-5'>message from principle</p>
+                                    <p className='text-xl font-bold cursor-pointer my-5'>message from CEO</p>
                                 </div>
                                 <div className='flex justify-center items-center'>
                                     <MdOutlineArrowForwardIos className='font-bold cursor-pointer' />
@@ -58,7 +61,7 @@ const page: React.FC = () => {
                         <div>
                             <div className='flex justify-between'>
                                 <div>
-                                    <p className='text-xl font-bold cursor-pointer my-5'>Board Executives</p>
+                                    <p className='text-xl font-bold cursor-pointer my-5'>Doctor Executives</p>
                                 </div>
                                 <div className='flex justify-center items-center'>
                                     <MdOutlineArrowForwardIos className='font-bold cursor-pointer' />
@@ -70,7 +73,7 @@ const page: React.FC = () => {
                         <div>
                             <div className='flex justify-between'>
                                 <div>
-                                    <p className='text-xl font-bold cursor-pointer my-5'>Our Campus & Facilities</p>
+                                    <p className='text-xl font-bold cursor-pointer my-5'>Our Team & Facilities</p>
                                 </div>
                                 <div className='flex justify-center items-center'>
                                     <MdOutlineArrowForwardIos className='font-bold cursor-pointer' />
