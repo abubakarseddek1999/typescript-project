@@ -2,6 +2,7 @@
 import DonorForm from "@/components/DonorForm/DonorForm";
 import Modal from "@/components/DonorForm/Modal";
 import React, { useState } from "react";
+import jsPDF from "jspdf";
 import Swal from "sweetalert2";
 
 const Page: React.FC = () => {
@@ -28,16 +29,30 @@ const Page: React.FC = () => {
     };
     // Handle actual submission (show SweetAlert and reset form)
     const handleFinalSubmit = () => {
+        // Create the PDF
+        const doc = new jsPDF();
+
+        doc.text("Form Details", 20, 20);
+        doc.text(`Name: ${formData.name}`, 20, 30);
+        doc.text(`Email: ${formData.email}`, 20, 40);
+        doc.text(`Phone: ${formData.phone}`, 20, 50);
+        doc.text(`Blood Group: ${formData.bloodGroup}`, 20, 60);
+        doc.text(`Gender: ${formData.gender}`, 20, 70);
+        doc.text(`Message: ${formData.message || "No message provided"}`, 20, 80);
+
+        // Save the PDF and trigger download
+        doc.save(`${formData.name}_details.pdf`);
+
+        // Show SweetAlert for successful submission
         Swal.fire({
             position: "top-end",
             icon: "success",
-            title: "Your Information Has Been Submitted!",
-            text: "Thank you for sharing your details!",
-            showCancelButton: false,
+            title: "Your work has been saved",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
         });
-        setIsModalOpen(false);  // Close the modal
+
+        // Reset form and close the modal
         setFormData({
             name: "",
             email: "",
@@ -45,7 +60,8 @@ const Page: React.FC = () => {
             bloodGroup: "",
             gender: "",
             message: "",
-        });  // Reset the form data
+        });
+        setIsModalOpen(false);  // Close the modal
     };
 
     const handleModalClose = () => {
