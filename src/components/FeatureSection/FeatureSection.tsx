@@ -22,11 +22,29 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ heading }) => {
                     <div className="p-6 border rounded-lg shadow-lg text-center">
                         <h3 className="text-xl font-semibold text-blue-500">Feature Two</h3>
                         <p className="mt-4 text-gray-600">
-                            Brief description of the feature and its purpose.
+                            Brief description of the feature and how it benefits the user.
                         </p>
                     </div>
                     <div className="p-6 border rounded-lg shadow-lg text-center">
                         <h3 className="text-xl font-semibold text-blue-500">Feature Three</h3>
+                        <p className="mt-4 text-gray-600">
+                            Brief description of the feature and its purpose.
+                        </p>
+                    </div>
+                    <div className="p-6 border rounded-lg shadow-lg text-center">
+                        <h3 className="text-xl font-semibold text-blue-500">Feature Four</h3>
+                        <p className="mt-4 text-gray-600">
+                            Explanation of the feature and its benefits.
+                        </p>
+                    </div>
+                    <div className="p-6 border rounded-lg shadow-lg text-center">
+                        <h3 className="text-xl font-semibold text-blue-500">Feature Five</h3>
+                        <p className="mt-4 text-gray-600">
+                            Explanation of the feature and its benefits.
+                        </p>
+                    </div>
+                    <div className="p-6 border rounded-lg shadow-lg text-center">
+                        <h3 className="text-xl font-semibold text-blue-500">Feature Six</h3>
                         <p className="mt-4 text-gray-600">
                             Explanation of the feature and its benefits.
                         </p>
